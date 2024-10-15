@@ -2,6 +2,7 @@
 Resource    ../imports.robot
 Resource    ../3_keywords/Vsee_keywords.robot
 Resource    ../5_test_datas/Vsee_data.robot
+Resource    ../2_elements/Vsee_elements.robot
 
 
 *** Test Cases ***
