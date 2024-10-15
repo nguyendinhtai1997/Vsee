@@ -1,0 +1,12 @@
+requests
+robotframework
+robotframework-appiumlibrary
+robotframework-csvlibrary
+robotframework-databaselibrary
+robotframework-datadriver
+robotframework-jsonlibrary
+robotframework-metrics
+robotframework-requests
+robotframework-seleniumlibrary
+robotframework-tidy
+webdrivermanager
