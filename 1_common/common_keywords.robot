@@ -1,8 +1,27 @@
 *** Settings ***
 Resource    ../imports.robot
+Library     SeleniumLibrary
+Library     OperatingSystem
+Library     pyautogui
+Library     Process
 
 
 *** Keywords ***
+[Common] - Open Chrome
+    [Arguments]    ${url}
+    ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${chrome_options}    add_extension    /Users/tainguyen/Desktop/Projects/Vsee/Cookie-Editor.crx
+    Create Webdriver    Chrome    options=${chrome_options}
+    [Common] - Maximize Browser Window
+    Go To    ${url}
+    BuiltIn.Sleep    3s
+    [Common] - Click Chrome Extension Icon
+    BuiltIn.Sleep    30s
+
+[Common] - Click Chrome Extension Icon
+    [Documentation]    Click vào icon extension bằng tọa độ màn hình
+    Evaluate    __import__('pyautogui').click(1400, 100)
+
 [Common] - Open Chrome Headless Browser
     [Arguments]    ${url}
     ${chrome_options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
